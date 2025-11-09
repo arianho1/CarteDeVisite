@@ -55,7 +55,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun BusinessCard() {
     val backgroundGradient = Brush.verticalGradient(
-        colors = listOf(Color(0xFFDFFFE0), Color(0xFF80CFA9)),
+        colors = listOf(Color(0xFFB2FF59), Color(0xFF56AB91)),
         startY = 0f,
         endY = 1000f
     )
@@ -68,10 +68,10 @@ fun BusinessCard() {
     ) {
         Column(
             modifier = Modifier
-                .width(320.dp)
-                .shadow(12.dp, RoundedCornerShape(20.dp))
-                .background(Color.White.copy(alpha = 0.95f), RoundedCornerShape(20.dp))
-                .padding(vertical = 36.dp, horizontal = 24.dp),
+                .width(350.dp)
+                .shadow(16.dp, RoundedCornerShape(24.dp))
+                .background(Color.White.copy(alpha = 0.97f), RoundedCornerShape(24.dp))
+                .padding(vertical = 40.dp, horizontal = 24.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
@@ -79,29 +79,29 @@ fun BusinessCard() {
                 painter = painterResource(id = R.drawable.android_logo),
                 contentDescription = "Photo de profil",
                 modifier = Modifier
-                    .size(100.dp)
+                    .size(110.dp)
                     .clip(CircleShape)
-                    .border(2.dp, Color(0xFF56AB91), CircleShape)
+                    .border(2.dp, Color(0xFF388E3C), CircleShape)
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(18.dp))
 
             Text(
                 text = "Kpai Arnaud Devai",
-                fontSize = 28.sp,
+                fontSize = 30.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color(0xFF1B5E20),
                 textAlign = TextAlign.Center
             )
 
             Text(
-                text = "Développeur Fullstack",
+                text = "Développeur Mobile / Fullstack",
                 fontSize = 18.sp,
-                color = Color(0xFF388E3C),
+                color = Color(0xFF2E7D32),
                 textAlign = TextAlign.Center
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(18.dp))
 
             HorizontalDivider(
                 modifier = Modifier.padding(horizontal = 16.dp),
@@ -117,9 +117,9 @@ fun BusinessCard() {
                 Image(
                     painter = painterResource(id = R.drawable.ic_phone),
                     contentDescription = "Téléphone",
-                    modifier = Modifier.size(20.dp)
+                    modifier = Modifier.size(22.dp)
                 )
-                Spacer(modifier = Modifier.width(6.dp))
+                Spacer(modifier = Modifier.width(8.dp))
                 Text(
                     text = "07 11 90 60 52",
                     fontSize = 16.sp,
@@ -127,7 +127,7 @@ fun BusinessCard() {
                 )
             }
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(10.dp))
 
             Row(
                 verticalAlignment = Alignment.CenterVertically
@@ -135,9 +135,9 @@ fun BusinessCard() {
                 Image(
                     painter = painterResource(id = R.drawable.ic_email),
                     contentDescription = "Email",
-                    modifier = Modifier.size(20.dp)
+                    modifier = Modifier.size(22.dp)
                 )
-                Spacer(modifier = Modifier.width(6.dp))
+                Spacer(modifier = Modifier.width(8.dp))
                 Text(
                     text = "arianhokpai@icloud.com",
                     fontSize = 16.sp,
@@ -145,7 +145,25 @@ fun BusinessCard() {
                 )
             }
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.github),
+                    contentDescription = "GitHub",
+                    modifier = Modifier.size(22.dp)
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(
+                    text = "@arianho1",
+                    fontSize = 16.sp,
+                    color = Color(0xFF424242)
+                )
+            }
+
+            Spacer(modifier = Modifier.height(10.dp))
 
             Row(
                 verticalAlignment = Alignment.CenterVertically
@@ -153,9 +171,9 @@ fun BusinessCard() {
                 Image(
                     painter = painterResource(id = R.drawable.ic_location),
                     contentDescription = "Localisation",
-                    modifier = Modifier.size(20.dp)
+                    modifier = Modifier.size(22.dp)
                 )
-                Spacer(modifier = Modifier.width(6.dp))
+                Spacer(modifier = Modifier.width(8.dp))
                 Text(
                     text = "Yamoussoukro",
                     fontSize = 16.sp,
