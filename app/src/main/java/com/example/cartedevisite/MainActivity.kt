@@ -46,10 +46,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun BusinessCard() {
-    val backgroundGradient = Brush.linearGradient(
-        colors = listOf(Color(0xFFA8E6CF), Color(0xFF56AB91)),
-        start = Offset(0f, 0f),
-        end = Offset(1000f, 1000f)
+    val backgroundGradient = Brush.verticalGradient(
+        colors = listOf(Color(0xFFDFFFE0), Color(0xFF80CFA9)),
+        startY = 0f,
+        endY = 1000f
     )
 
     Box(
@@ -61,27 +61,26 @@ fun BusinessCard() {
         Column(
             modifier = Modifier
                 .width(320.dp)
-                .shadow(8.dp, RoundedCornerShape(16.dp))
-                .background(Color.White.copy(alpha = 0.95f), RoundedCornerShape(16.dp))
-                .padding(vertical = 32.dp, horizontal = 20.dp),
+                .shadow(12.dp, RoundedCornerShape(20.dp))
+                .background(Color.White.copy(alpha = 0.95f), RoundedCornerShape(20.dp))
+                .padding(vertical = 36.dp, horizontal = 24.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            // 🖼️ Photo de profil
             Image(
-                painter = painterResource(id = R.drawable.android_logo), // 👉 remplace par ton image
+                painter = painterResource(id = R.drawable.android_logo),
                 contentDescription = "Photo de profil",
                 modifier = Modifier
                     .size(100.dp)
                     .clip(CircleShape)
-                    .border(3.dp, Color(0xFF56AB91), CircleShape)
+                    .border(2.dp, Color(0xFF56AB91), CircleShape)
             )
 
             Spacer(modifier = Modifier.height(16.dp))
 
             Text(
                 text = "Kpai Arnaud Devai",
-                fontSize = 26.sp,
+                fontSize = 28.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color(0xFF1B5E20),
                 textAlign = TextAlign.Center
@@ -89,8 +88,8 @@ fun BusinessCard() {
 
             Text(
                 text = "Développeur Fullstack",
-                fontSize = 17.sp,
-                color = Color(0xFF4CAF50),
+                fontSize = 18.sp,
+                color = Color(0xFF388E3C),
                 textAlign = TextAlign.Center
             )
 
@@ -104,23 +103,57 @@ fun BusinessCard() {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            Text(
-                text = "📞 07 11 90 60 52",
-                fontSize = 16.sp,
-                color = Color(0xFF424242)
-            )
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.ic_phone),
+                    contentDescription = "Téléphone",
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(modifier = Modifier.width(6.dp))
+                Text(
+                    text = "07 11 90 60 52",
+                    fontSize = 16.sp,
+                    color = Color(0xFF424242)
+                )
+            }
 
-            Text(
-                text = "✉️ arianhokpai@icloud.com",
-                fontSize = 16.sp,
-                color = Color(0xFF424242)
-            )
+            Spacer(modifier = Modifier.height(8.dp))
 
-            Text(
-                text = "📍 Yamoussoukro",
-                fontSize = 16.sp,
-                color = Color(0xFF424242)
-            )
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.ic_email),
+                    contentDescription = "Email",
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(modifier = Modifier.width(6.dp))
+                Text(
+                    text = "arianhokpai@icloud.com",
+                    fontSize = 16.sp,
+                    color = Color(0xFF424242)
+                )
+            }
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.ic_location),
+                    contentDescription = "Localisation",
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(modifier = Modifier.width(6.dp))
+                Text(
+                    text = "Yamoussoukro",
+                    fontSize = 16.sp,
+                    color = Color(0xFF424242)
+                )
+            }
         }
     }
 }
