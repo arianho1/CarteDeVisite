@@ -66,7 +66,7 @@ fun BusinessCard() {
             repeatMode = RepeatMode.Reverse
         )
     )
-
+ 
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -103,7 +103,7 @@ fun BusinessCard() {
         )
 
         Text(
-            text = "Étudiant en Licence 3 Informatique",
+            text = "Développeur Fullstack",
             color = Color(0xFFB2FF59),
             fontSize = 18.sp,
             textAlign = TextAlign.Center
